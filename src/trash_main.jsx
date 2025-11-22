@@ -6,7 +6,7 @@ import TrashTrigger2 from './components/TrashTrigger2.jsx';
 
 function Main() {
  return (
-   <BrowserRouter> 
+   <BrowserRouter basename='/Advantech-ML'> 
        <Routes>
          <Route path="/" element={
             <TrashTrigger2>
