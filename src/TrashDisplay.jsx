@@ -2,6 +2,7 @@ import trashMap from "./utils/trashMap.jsx"
 import trashFetch from "./api/trashFetch.jsx"
 import { useState, useEffect } from "react"
 import imgUnknown from '/Unknown.svg'
+import "./trash_main.module.css"
 
 const DEFAULT_DATA = {
     type: 'ไม่ทราบประเภท',
