@@ -3,5 +3,5 @@
 h1 {
     @apply italic;
            font-weight: bold;
-           
+           font-family: 'Poppins';
 }

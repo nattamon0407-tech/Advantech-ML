@@ -9,5 +9,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-    base: mode = "/Advantech-ML"
+    base: "/Advantech-ML",
 });
