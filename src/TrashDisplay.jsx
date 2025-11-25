@@ -34,7 +34,7 @@ function TrashDisplay({ onTimerReset, onNavigateReady }) {
                 }
                 return prevCount - 1;
             });
-        }, 1000);
+        }, 1000); //ลบ 0 3 ตัว
         return () => clearInterval(intervalId);
     }, []);
 
@@ -62,20 +62,26 @@ function TrashDisplay({ onTimerReset, onNavigateReady }) {
     };
     
     return (
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
-          <h1>Welcome to Advantech Main Page</h1> 
-          <img src={data.image} alt={data.type} width="200" />
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%',marginTop : "-5px"}}>
+          <img src={data.image} alt={data.type} width={"300"} />
           <h2>{data.type}</h2>
           <p>{data.category}</p>
-          <p>Point +{data.point}</p>
-          <p style={{ marginTop: '20px', backgroundColor: data.color, color: 'white', padding: '10px'}}>
-            Total Point {totalPoint}
+          <p style={{fontSize : '70px'}} > +{data.point} Points</p> 
+          <p style={{ marginTop: '1px', backgroundColor: data.color, color: 'white', padding: '10px', borderRadius: '60px', fontSize: "30px", paddingLeft:"20px", paddingRight:"20px"}}>
+            Total {totalPoint} Points
           </p>
-          <button type="button" onClick={handleGenerateData} disabled={isLoading}>
-            {isLoading ? 'Loading...' : 'Generate Data'}</button>
-          <p style={{ marginTop: '10px', fontSize: '1.2em', fontWeight: 'bold' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            
+        <img src="./21.png" style={{width: "100px"}}/>
+        <p style={{ marginTop: '10px', fontSize: '1.2em', fontWeight: 'bold', paddingLeft:"150px", paddingRight:"150px"}}>
             Time Remaining: {countdown} seconds
           </p>
+        <img src="./22.png"style={{width : "100px"}}/>
+        </div>
+          
+          {/* <button type="button" onClick={handleGenerateData} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Generate Data'}</button> */}
+         
           <svg style={{
             position: 'fixed',
             bottom: 0,
@@ -86,6 +92,7 @@ function TrashDisplay({ onTimerReset, onNavigateReady }) {
             zIndex: 1000}}>
             <rect x="0" y="0" width="100%" height="100%" fill={data.color} />
           </svg>
+          
       </div>
     );
 }
