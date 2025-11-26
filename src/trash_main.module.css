@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@
+
+body {font-family: 'Poppins'};
 
 h1 {
     @apply italic;
