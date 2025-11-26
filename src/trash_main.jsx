@@ -8,7 +8,7 @@ import "./trash_main.module.css"
 
 function Main() {
  return (
-   <BrowserRouter basename='/Advantech-ML'> 
+   <BrowserRouter basename='/Advantech-ML/'> 
        <Routes>
         <Route path="/" element={<WelcomePage />} />
          <Route path="/mainpage" element={
