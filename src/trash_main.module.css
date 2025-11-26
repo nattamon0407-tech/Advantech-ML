@@ -1,25 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Prompt:wght@400;600;700&display=swap');
-@import "tailwindcss";
 
+@layer base {
+    body {font-family: 'Poppins', 'Prompt'};
+}
 
-body {font-family: 'Poppins', 'Prompt'};
-
+@layer components {
 h1 {
-    @apply italic;
-           font-family: 'Poppins';
-           font-weight: bold;
-           
+    font-family: 'Poppins';
+    font-weight: bold;      
 }
 p {
-    @apply italic;
-           font-family: 'Poppins', 'Prompt';
-           font-weight: 900;
+    font-family: 'Poppins', 'Prompt';
+    font-weight: 900;
 }
 h2 {
-    @apply italic;
-           font-family: 'Prompt';
-           font-weight: 900;
-           font-size: 30px;
+    font-family: 'Prompt';
+    font-weight: 900;
+    font-size: 30px;
+}
+
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
