@@ -70,15 +70,24 @@ function TrashDisplay({ onTimerReset, onNavigateReady }) {
           <p style={{ marginTop: '1px', backgroundColor: data.color, color: 'white', padding: '10px', borderRadius: '60px', fontSize: "30px", paddingLeft:"20px", paddingRight:"20px"}}>
             Total {totalPoint} Points
           </p>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            
-        <img src="./21.png" style={{width: "100px"}}/>
-        <p style={{ marginTop: '10px', fontSize: '1.2em', fontWeight: 'bold', paddingLeft:"150px", paddingRight:"150px"}}>
+          <p style={{ marginTop: '10px', fontSize: '1.2em', fontWeight: 'bold', paddingLeft:"150px", paddingRight:"150px"}}>
             Time Remaining: {countdown} seconds
           </p>
-        <img src="./22.png"style={{width : "100px"}}/>
-        </div>
-          
+          <div style={{ display: 'flex', alignItems: 'center', marginTop:'20px'}}>
+      <img src="./21.png" style={{
+      position: 'fixed',
+      bottom: '50px',   // ระยะห่างจากล่าง
+      left: '20px',     // ระยะห่างจากซ้าย
+      width: '100px',
+      zIndex: 1000
+    }}/>
+      <img src="./22.png"style={{ 
+        position: 'fixed',
+      bottom: '50px',   // ระยะห่างจากล่าง
+      right: '20px',     // ระยะห่างจากซ้าย
+      width: '100px',
+      zIndex: 1000}}/>
+      </div>
           {/* <button type="button" onClick={handleGenerateData} disabled={isLoading}>
             {isLoading ? 'Loading...' : 'Generate Data'}</button> */}
          
