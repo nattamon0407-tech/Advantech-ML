@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import imgUnknown from '/Unknown.svg'
 import "./trash_main.module.css"
 
+// test ดึง
+
 const DEFAULT_DATA = {
     type: 'ไม่ทราบประเภท',
     image: imgUnknown,
