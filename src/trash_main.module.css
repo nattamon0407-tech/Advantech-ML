@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
-
 h1 {
     @apply italic;
+           font-family: 'Poppins';
            font-weight: bold;
-           font-family: 'Poppins, sans-serif;';
+           
 }
 p {
     @apply italic;
+           font-family: 'Poppins';
            font-weight: 900;
-           font-family: 'Poppins, sans-serif;';
 }
 h2 {
     @apply italic;
-           font-size: 25px;
+           font-family: 'Prompt';
            font-weight: 900;
-           font-family: 'Poppins, sans-serif;';
+           font-size: 30px;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }

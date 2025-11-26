@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundGif from '/ReX.gif';
+import './trash_main.module.css';
 
 const REDIRECT_DELAY_MS = 5000;
 
@@ -38,7 +39,6 @@ const WelcomePage = () => {
     </div>
   );
 };
-
 const styles = {
   container: { position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' },
   backgroundGif: {
