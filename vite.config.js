@@ -8,7 +8,6 @@ export default defineConfig({
   base: repoName,
   plugins: [
     react()
-  ],
-  base: "/Advantech-ML",
+  ]
 })
 
