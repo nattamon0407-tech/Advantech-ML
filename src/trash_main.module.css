@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 
-body {font-family: 'Poppins'};
+body {font-family: 'Poppins', 'Prompt'};
 
 h1 {
     @apply italic;
@@ -12,7 +12,7 @@ h1 {
 }
 p {
     @apply italic;
-           font-family: 'Poppins';
+           font-family: 'Poppins', 'Prompt';
            font-weight: 900;
 }
 h2 {
