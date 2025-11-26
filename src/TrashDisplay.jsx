@@ -1,6 +1,6 @@
 import trashMap from "./utils/trashMap.jsx";
 // import trashFetch from "./api/trashFetch.jsx";
-import trashFetch2 from "./backend/trashFetch2.jsx";
+import trashFetch from "./api/trashFetch.jsx";
 import { useState, useEffect } from "react";
 import imgUnknown from '/Unknown.svg';
 import './trash_main.module.css';
@@ -47,7 +47,7 @@ function TrashDisplay({ onTimerReset, onNavigateReady }) {
         }
         console.log("1. Starting API call...");
         try {
-            const fetchData = await trashFetch2();
+            const fetchData = await trashFetch();
             console.log("2. API call succeeded.");
             if (fetchData && fetchData.trashType) {
                 const mappedData = trashMap(fetchData.trashType);
