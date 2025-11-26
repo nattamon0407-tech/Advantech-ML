@@ -12,7 +12,7 @@ function TrashTrigger2({ children }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        // navigate("/summary", { state: navigationData });
+        navigate("/summary", { state: navigationData });
     }, TIMER_DURATION);
     return () => clearTimeout(timer);
   }, [activityKey, navigate, navigationData]);
