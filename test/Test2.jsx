@@ -1,5 +1,5 @@
-import trashMap from "./utils/trashMap.jsx"   
-import trashFetch from "./api/trashFetch.jsx"
+import trashMap from "../src/utils/trashMap.jsx"   
+import trashFetch from "../src/api/trashFetch.jsx"
 import { useState } from "react"
 import imgUnknown from '/Unknown.svg'
 
@@ -11,10 +11,9 @@ const DEFAULT_DATA = {
     color: '#808080'
 };
 
-function Test3() {
+function Test2() {
     const [data, setData] = useState(DEFAULT_DATA);
     const [isLoading, setIsLoading] = useState(false);
-    const [totalPoint, setTotalPoint] = useState(0);
 
     const handleGenerateData = async () => {
         setIsLoading(true);
@@ -23,7 +22,6 @@ function Test3() {
             if (fetchData && fetchData.trashType) {
                 const mappedData = trashMap(fetchData.trashType);
                 setData(mappedData);
-                setTotalPoint(prevPoint => prevPoint + mappedData.point);
                 console.log("Fetched and Mapped Data:", mappedData);
             }
         } catch (error) {
@@ -40,7 +38,7 @@ function Test3() {
           <p>{data.category}</p>
           <p>Point +{data.point}</p>
           <p style={{ marginTop: '20px', backgroundColor: data.color, color: 'white', padding: '10px'}}>
-            Total Point {totalPoint}
+            Total Point()
           </p>
         <button type="button" onClick={handleGenerateData} disabled={isLoading}>{isLoading ? 'Loading...' : 'Generate Data'}</button>
         <svg style={{
@@ -56,4 +54,4 @@ function Test3() {
       </div>
     );
 }
-export default Test3;
+export default Test2;

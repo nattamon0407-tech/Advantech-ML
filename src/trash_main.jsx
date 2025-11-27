@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import TrashDisplay from './TrashDisplay.jsx'
 import SummaryPage from './SummaryPage.jsx'
 import WelcomePage from './welcomepage.jsx'
@@ -8,7 +8,7 @@ import "./trash_main.module.css"
 
 function Main() {
  return (
-   <BrowserRouter basename='/Advantech-ML/'> 
+   <HashRouter> 
        <Routes>
         <Route path="/" element={<WelcomePage />} />
          <Route path="/mainpage" element={
@@ -18,7 +18,7 @@ function Main() {
             } />
          <Route path="/summary" element={<SummaryPage />} />
        </Routes>
-   </BrowserRouter>
+   </HashRouter>
  );
 }
 

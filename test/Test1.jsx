@@ -1,4 +1,4 @@
-import trashMap from "./utils/trashMap.jsx"   
+import trashMap from "../src/utils/trashMap.jsx"   
 
 function Test1() {
     let sample = '{"trashType": "General"}';

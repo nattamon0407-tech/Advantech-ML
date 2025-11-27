@@ -1,6 +1,6 @@
-import trashMap from "./utils/trashMap.jsx"   
-import trashFetch from "./api/trashFetch.jsx"
-import { useState, useEffect } from "react"
+import trashMap from "../src/utils/trashMap.jsx"   
+import trashFetch from "../src/api/trashFetch.jsx"
+import { useState } from "react"
 import imgUnknown from '/Unknown.svg'
 
 const DEFAULT_DATA = {
@@ -11,34 +11,15 @@ const DEFAULT_DATA = {
     color: '#808080'
 };
 
-function Test4({ onTimerReset }) {
+function Test3() {
     const [data, setData] = useState(DEFAULT_DATA);
     const [isLoading, setIsLoading] = useState(false);
     const [totalPoint, setTotalPoint] = useState(0);
-    const [countdown, setCountdown] = useState(10);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCountdown(prevCount => {
-                if (prevCount <= 1) {
-                    return 10;
-                }
-                return prevCount - 1;
-            });
-        }, 1000);
-        return () => clearInterval(intervalId);
-    }, []);
 
     const handleGenerateData = async () => {
         setIsLoading(true);
-        setCountdown(10);
-        if (onTimerReset) {
-            onTimerReset();
-        }
-        console.log("1. Starting API call...");
         try {
             const fetchData = await trashFetch();
-            console.log("2. API call succeeded.");
             if (fetchData && fetchData.trashType) {
                 const mappedData = trashMap(fetchData.trashType);
                 setData(mappedData);
@@ -46,7 +27,7 @@ function Test4({ onTimerReset }) {
                 console.log("Fetched and Mapped Data:", mappedData);
             }
         } catch (error) {
-            console.error("3. Error during API call:", error);
+            console.error("Error generating trash data:", error);
         } finally {
             setIsLoading(false);
         } 
@@ -61,21 +42,18 @@ function Test4({ onTimerReset }) {
           <p style={{ marginTop: '20px', backgroundColor: data.color, color: 'white', padding: '10px'}}>
             Total Point {totalPoint}
           </p>
-          <button type="button" onClick={handleGenerateData} disabled={isLoading}>{isLoading ? 'Loading...' : 'Generate Data'}</button>
-          <p style={{ marginTop: '10px', fontSize: '1.2em', fontWeight: 'bold' }}>
-            Time Remaining: {countdown} seconds
-          </p>
-          <svg style={{
-            position: 'fixed',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: '4vh',
-            width: '100vw',
-            zIndex: 1000}}>
-            <rect x="0" y="0" width="100%" height="100%" fill={data.color} />
-          </svg>
+        <button type="button" onClick={handleGenerateData} disabled={isLoading}>{isLoading ? 'Loading...' : 'Generate Data'}</button>
+        <svg style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '4vh',
+          width: '100vw',
+          zIndex: 1000}}>
+          <rect x="0" y="0" width="100%" height="100%" fill={data.color} />
+        </svg>
       </div>
     );
 }
-export default Test4;
+export default Test3;
